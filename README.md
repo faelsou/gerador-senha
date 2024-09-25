@@ -24,7 +24,7 @@ pip install Flask
 
 5. Arquivo de Estilos (static/style.css) css
 
-# 6. Rodar o Projeto
+6. Rodar o Projeto
 Salve os arquivos conforme a estrutura mencionada.
 Execute o comando para rodar o servidor Flask:
 bash
