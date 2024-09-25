@@ -4,8 +4,6 @@ Projeto em Python que gera senhas embaralhadas com um front-end simples, podemos
 1. Estrutura do Projeto
 A estrutura do projeto será a seguinte:
 
-csharp
-Copy code
 password_generator/
 │
 ├── app.py  # Arquivo principal do Flask
@@ -13,22 +11,20 @@ password_generator/
 │   └── index.html  # Front-end HTML
 └── static/
     └── style.css  # Arquivo de estilos (CSS)
+    
 2. Instalando Dependências
 Antes de começar, você precisa instalar o Flask. Use o seguinte comando para instalar:
 
 bash
-Copy code
 pip install Flask
-3. Arquivo Backend (app.py)
-python
 
-4. Arquivo HTML (templates/index.html)
-html
+3. Arquivo Backend (app.py) python
 
-5. Arquivo de Estilos (static/style.css)
-css
+4. Arquivo HTML (templates/index.html) html
 
-6. Rodar o Projeto
+5. Arquivo de Estilos (static/style.css) css
+
+# 6. Rodar o Projeto
 Salve os arquivos conforme a estrutura mencionada.
 Execute o comando para rodar o servidor Flask:
 bash
