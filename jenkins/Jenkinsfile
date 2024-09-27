@@ -11,7 +11,7 @@ pipeline {
             steps {
                 // Adicione os passos que você deseja executar nesta etapa
                 // Por exemplo:
-                sh 'docker run --name meu_jenkins -p 8082:8080 -p 50000:50000 \
+                sh 'docker run --name jenkins/jenkins -p 8082:8080 -p 50000:50000 \
                     -v /var/run/docker.sock:/var/run/docker.sock \
                     -v jenkins_home:/var/jenkins_home \
                     -djenkins/jenkins'
