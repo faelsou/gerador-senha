@@ -11,7 +11,7 @@ pipeline {
         stage('Setup') {
             steps {
                 // Adicione os passos de setup aqui (ex: instalar dependências)
-                sh 'chmod 777 /var/lib/apt/lists/partial && mkdir -p /var/lib/apt/lists/partial'
+                sh 'mkdir -p /var/lib/apt/lists/partial && chmod 777 /var/cache/apt/archives/partial'
                 sh 'rm -rf /var/lib/apt/lists/* && apt clean && fsck -f /'
                 sh 'apt update && apt install python3-pip -y'
                 sh 'python3 -m venv venv'
