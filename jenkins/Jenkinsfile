@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/faelsou/gerador-senha.git'
             }
         }
-        docker {
+        stage ('Docker') {
             image 'faelsouz/jenkins-root:1.0' // Substitua pela sua imagem Docker
             args '-u root:root' // Executa o contêiner como root  
         }
