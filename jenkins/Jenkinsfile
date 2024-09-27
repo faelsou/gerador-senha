@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/faelsou/gerador-senha.git'
+            }
+        }
+        
+        stage('Setup') {
+            steps {
+                sh 'python3 -m venv venv'
+                sh 'source venv/bin/activate && pip install -r requirements.txt'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'source venv/bin/activate && pytest'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Adicione os passos de deploy aqui (ex: copiar arquivos para o servidor)
+                echo 'Deploying application...'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
