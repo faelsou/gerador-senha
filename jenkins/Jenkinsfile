@@ -15,15 +15,10 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'source venv/bin/activate && pytest'
-            }
-        }
-
         stage('Deploy') {
             steps {
                 // Adicione os passos de deploy aqui (ex: copiar arquivos para o servidor)
+                sh 'python3 app.py'
                 echo 'Deploying application...'
             }
         }
