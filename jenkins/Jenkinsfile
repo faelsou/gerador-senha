@@ -14,7 +14,7 @@ pipeline {
                 sh 'docker run --name jenkins/jenkins -p 8082:8080 -p 50000:50000 \
                     -v /var/run/docker.sock:/var/run/docker.sock \
                     -v jenkins_home:/var/jenkins_home \
-                    -djenkins/jenkins'
+                    -d jenkins/jenkins'
                 sh 'docker build -t faelsouz/jenkins-root:1.1 .'
                 sh 'docker push faelsouz/faelsouz:1.1'
                 image 'faelsouz/jenkins-root:1.1' // Substitua pela sua imagem Docker
