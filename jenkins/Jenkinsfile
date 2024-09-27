@@ -7,12 +7,15 @@ pipeline {
                 git 'https://github.com/faelsou/gerador-senha.git'
             }
         }
-        agent {
-            docker {
-                image 'jenkins-root:1.2' // Substitua pela sua imagem Docker
-                args '-u root:root' // Executa o contêiner como root       docker push meu_usuario/meu_aplicativo:1.0 
+        stage('Docker Image') {
+            agent {
+                docker {
+                    image 'jenkins-root:1.2' // Substitua pela sua imagem Docker
+                    args '-u root:root' // Executa o contêiner como root       docker push meu_usuario/meu_aplicativo:1.0 
+                }
             }
         }
+        
         stage('Setup') {
             steps {
                 // Adicione os passos de setup aqui (ex: instalar dependências)
