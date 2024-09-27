@@ -9,6 +9,7 @@ pipeline {
                 //sh 'docker login -u faelsouz -p $DOCKERHUB_TOKEN'
                 //sh 'docker build -t faelsouz/jenkins-root:1.1 .'
                 //sh 'docker push faelsouz/faelsouz:1.1'
+                sh 'docker run -d faelsouz/jenkins-root:1.2'
                 image 'faelsouz/jenkins-root:1.2' // Substitua pela sua imagem Docker
                 args '-u root:root' // Executa o contêiner como root  
             }
