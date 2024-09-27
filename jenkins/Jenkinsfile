@@ -8,8 +8,14 @@ pipeline {
             }
         }
         stage ('Docker') {
-            image 'faelsouz/jenkins-root:1.0' // Substitua pela sua imagem Docker
-            args '-u root:root' // Executa o contêiner como root  
+            steps {
+                // Adicione os passos que você deseja executar nesta etapa
+                // Por exemplo:
+                sh 'docker build -t faelsouz/jenkins-root:1.0 .'
+                sh 'docker push faelsouz/faelsouz:1.0'
+                image 'faelsouz/jenkins-root:1.0' // Substitua pela sua imagem Docker
+                args '-u root:root' // Executa o contêiner como root  
+            }
         }
         stage('Setup') {
             steps {
