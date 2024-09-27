@@ -1,19 +1,16 @@
 pipeline {
     agent any
+
     stages {
-        stage ('Docker') {
+        stage('Checkout') {
             steps {
-                // Adicione os passos que você deseja executar nesta etapa
-                // Por exemplo:
-                //sh 'docker login -u faelsouz -p $DOCKERHUB_TOKEN'
-                //sh 'docker build -t faelsouz/jenkins-root:1.2 .'
-                //sh 'docker push faelsouz/faelsouz:1.1'
-                
-                image 'faelsouz/jenkins-root:1.2' // Substitua pela sua imagem Docker
-                //args '-u root:root' // Executa o contêiner como root  
-                //sh 'docker run -d faelsouz/jenkins-root:1.2'
+                git 'https://github.com/faelsou/gerador-senha.git'
             }
         }
+        agent {
+            docker {
+                image 'jenkins-root:1.2' // Substitua pela sua imagem Docker
+                args '-u root:root' // Executa o contêiner como root       docker push meu_usuario/meu_aplicativo:1.0 
         stage('Setup') {
             steps {
                 // Adicione os passos de setup aqui (ex: instalar dependências)
