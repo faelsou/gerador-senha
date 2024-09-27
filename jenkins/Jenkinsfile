@@ -11,7 +11,7 @@ pipeline {
         stage('Setup') {
             steps {
                 // Adicione os passos de setup aqui (ex: instalar dependências)
-                sh 'sudo apt update && sudo apt install python3 -y'
+                sh 'apt update && apt install python3 -y'
                 sh 'python3 -m venv venv'
                 sh 'source venv/bin/activate && pip install -r requirements.txt'
             }
